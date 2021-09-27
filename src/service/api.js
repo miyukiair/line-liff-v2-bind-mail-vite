@@ -2,9 +2,9 @@ import axios from 'axios';
 
 export const sendValidationCodePost = (name, email, token) => {
     const targetUrl = "https://script.google.com/macros/s/AKfycbxpx6GgQiGJYGeR0t8jO2NvTqnM02k8sinIHXGWlnqsx3tyYVWNlDBSUqiBdlKG_bAsYg/exec";
-    let data = {name, email, token};
+    let data = JSON.stringify({name, email, token});
     return axios.post(targetUrl, data, {
-        crossDomain: true
+        headers: { 'content-type': 'application/x-www-form-urlencoded' }
     }).then(response => {
         if (response) {
             return response;
@@ -14,15 +14,4 @@ export const sendValidationCodePost = (name, email, token) => {
     }).catch(error => {
         console.log('error', error);
     });
-};
-
-export const testGet = () => {
-    const targetUrl = "https://script.google.com/macros/s/AKfycbxpx6GgQiGJYGeR0t8jO2NvTqnM02k8sinIHXGWlnqsx3tyYVWNlDBSUqiBdlKG_bAsYg/exec";
-    return axios.get(targetUrl, {
-        crossDomain: true
-    }).then(res => {
-        console.log(res);
-    }).catch(error => {
-        console.log('error', error);
-    })
 };
