@@ -1,12 +1,5 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import BindMail from './views/BindMail.vue'
-</script>
-
 <template>
   <router-view />
-  <button @click="this.$router.push('/validate')"> go to validate</button>
 </template>
 
 <style>
