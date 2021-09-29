@@ -6,8 +6,11 @@ import path from 'path';
 export default defineConfig({
   plugins: [vue()],
   base: '/line-liff-v2-bind-mail-vite/dist/',
-  alias: {
-    "/@": path.resolve(__dirname, "src"),
+  resolve:{
+    alias: {
+      "/@": path.resolve(__dirname, "src"),
+      "components": path.resolve(__dirname, "src/components")
+    }
   },
   optimizeDeps: {
     include: ["axios"]

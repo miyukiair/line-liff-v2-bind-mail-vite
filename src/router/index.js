@@ -3,12 +3,17 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
     {
         path: "/",
-        name: "Home",
-        component: () => import("/@/components/BindMail.vue"),
-    }
+        name: "BindMail",
+        component: () => import("/@/views/BindMail.vue"),
+    },
+    {
+        path: "/validate",
+        name: "Validate",
+        component: () => import("/@/views/Validate.vue"),
+    },
 ];
 
 export default createRouter({
-    history: createWebHistory(),
+    history: createWebHistory('/line-liff-v2-bind-mail-vite/dist/'),
     routes,
 });

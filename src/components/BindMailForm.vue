@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted, ref, defineEmits} from 'vue'
+import {onMounted, ref} from 'vue'
 import {sendValidationCodePost} from '/src/service/api'
 import * as yup from 'yup';
 

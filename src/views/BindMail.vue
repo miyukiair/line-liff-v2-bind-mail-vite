@@ -1,7 +1,7 @@
 <script setup>
 import {onMounted, ref, provide} from 'vue'
-import BindMailForm from "./BindMailForm.vue";
-import BindMailResult from "./BindMailResult.vue";
+import BindMailForm from "/@/components/BindMailForm.vue";
+import BindMailResult from "/@/components/BindMailResult.vue";
 
 const errorMsg = ref("");
 const bindStep = ref('form');
