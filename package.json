@@ -1,0 +1,20 @@
+{
+  "name": "line-liff-v2-bind-mail-vite",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.11",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.0",
+    "axios": "^0.21.4",
+    "path": "^0.12.7",
+    "vite": "^2.5.10"
+  }
+}

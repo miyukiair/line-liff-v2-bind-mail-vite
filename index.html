@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>驗證碼小幫手 - 身份認證</title>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <style type="text/css">
+        input {
+            padding: 8px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            width: 200px;
+        }
+        .error {
+            color: red;
+        }
+        button {
+            border: none;
+            display: inline-block;
+            padding: 8px 16px;
+            vertical-align: middle;
+            overflow: hidden;
+            text-decoration: none;
+            color: #FFF;
+            background-color: #2196F3;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+            border-radius: 4px;
+            user-select: none;
+        }
+        button:disabled,
+        button[disabled]{
+            background-color: #cccccc;
+            color: #666666;
+        }
+        .inline-btns {
+            display: inline-block;
+        }
+        .inline-btns button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
