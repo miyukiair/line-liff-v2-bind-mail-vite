@@ -1,1 +1,0 @@
-import{q as a,o as r,i as e,j as n}from"./vendor.8c681a18.js";var o=(a,r)=>{for(const[e,n]of r)a[e]=n;return a};const s=a({name:"Validate"}),t=[n("h1",null,"This is a validate page",-1)];var i=o(s,[["render",function(a,n,o,s,i,l){return r(),e("div",null,t)}]]);export{i as default};

@@ -1,0 +1,1 @@
+import{s as a,o as r,b as e,e as n}from"./vendor.dbfd27f8.js";var s=(a,r)=>{for(const[e,n]of r)a[e]=n;return a};const o=a({name:"Validate"}),t=[n("h1",null,"This is a validate page",-1)];var d=s(o,[["render",function(a,n,s,o,d,f){return r(),e("div",null,t)}]]);export{d as default};

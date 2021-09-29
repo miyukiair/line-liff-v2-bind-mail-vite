@@ -6,6 +6,7 @@ import BindMail from './views/BindMail.vue'
 
 <template>
   <router-view />
+  <button @click="this.$router.push('/validate')"> go to validate</button>
 </template>
 
 <style>
