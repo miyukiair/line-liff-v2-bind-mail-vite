@@ -1,13 +1,15 @@
 <template>
-  <div>
-    <h1>This is a validate page</h1>
-  </div>
+  <ValidateForm/>
 </template>
 
 <script>
 import { defineComponent } from "vue";
+import ValidateForm from "/@/components/ValidateForm.vue";
 
 export default defineComponent({
   name: "Validate",
+  components: {
+    ValidateForm,
+  },
 });
 </script>

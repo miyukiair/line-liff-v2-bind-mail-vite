@@ -1,1 +1,0 @@
-import{_ as a}from"./index.0b4e5aa9.js";import{m as e,o as r,g as s,h as n}from"./vendor.61cf68e1.js";const i=e({name:"Validate"}),o=[n("h1",null,"This is a validate page",-1)];var t=a(i,[["render",function(a,e,n,i,t,d){return r(),s("div",null,o)}]]);export{t as default};
