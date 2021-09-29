@@ -10,12 +10,18 @@ console.log(route.query)
 const validationCode = ref("");
 const userToken = ref("");
 const inputEmail = ref("");
+const result = ref("");
 const showCode = ref(false);
 const showMail = ref(false);
 const onSubmit = ref(false);
 
+const closeLiff = () => {
+  liff.closeWindow();
+}
+
 const mailSchema = yup.string().email().required();
 const submit = async () => {
+  result.value = "";
   onSubmit.value = true;
 
   if (validationCode.value.length === 0) {
@@ -24,19 +30,19 @@ const submit = async () => {
     return;
   }
 
+  let res = null;
   if (userToken.value.length === 0) {
     const isMailValid = await mailSchema.isValid(inputEmail.value);
     if (isMailValid) {
-      let res = await validateCodePost(validationCode.value, null, inputEmail.value)
+      res = await validateCodePost(validationCode.value, null, inputEmail.value)
     } else {
-      onSubmit.value = false;
       alert('請輸入有效的信箱地址');
     }
   } else {
-    let res = await validateCodePost(validationCode.value, userToken.value, null)
+    res = await validateCodePost(validationCode.value, userToken.value, null)
   }
-
-  console.log("res: ", res);
+  result.value = (res && res.data.message) || '';
+  onSubmit.value = false;
 }
 
 onMounted(() => {
@@ -66,9 +72,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <p v-if="showCode">認證碼：<input type="email" v-model="validationCode" placeholder="請輸入認證碼"></p>
-  <p v-if="showMail">收到認證碼的信箱：<input type="email" v-model="inputEmail" placeholder="請輸入收到認證碼的信箱"></p>
+  <p v-if="showCode" v-show="!onSubmit">認證碼：<input type="email" v-model="validationCode" placeholder="請輸入認證碼"></p>
+  <p v-if="showMail" v-show="!onSubmit">收到認證碼的信箱：<input type="email" v-model="inputEmail" placeholder="請輸入收到認證碼的信箱"></p>
+  <button v-if="showCode || showMail" v-show="!onSubmit" type="button" class="btn" @click="submit()" :disabled="onSubmit">送出</button>
 
-  <button v-if="showCode || showMail" type="button" class="btn" @click="submit()" :disabled="onSubmit">送出</button>
-  <p v-else>認證中，請稍候...</p>
+  <p v-show="onSubmit">認證中，請稍候...</p>
+
+  <template v-if="result.length > 0">
+    <p>{{(result === 'success') ? '認證成功' : '認證失敗'}}</p>
+    <button type="button" class="btn" @click="closeLiff">關閉</button>
+  </template>
 </template>
